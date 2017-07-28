@@ -7,10 +7,6 @@ export class Feeds extends React.Component {
         super(props);
     }
 
-    static navigationOptions = {
-        title: 'Flux d\'actualité'
-    }
-
     render() {
         return (
             <View style={{flex: 1}}>
