@@ -6,3 +6,4 @@ adb.0.log
 *.lock
 *.lock
 *.bin
+*.txt
