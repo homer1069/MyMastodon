@@ -37,7 +37,7 @@ export class Login extends React.Component {
     }
 
     componentWillUnmount() {
-        console.log('Desctruction du composant');
+        console.log('Destruction du composant');
     }
 
     render() {
@@ -63,9 +63,10 @@ export class Login extends React.Component {
                            value={ this.state.password }/>
                 <Button
                     onPress={() => this.submitForm() }
+                    style={ { height: 40 } }
                     title="Se connecter"
-                    color="#841584"
-                    accessibilityLabel="Learn more about this purple button"
+                    color="#3399ff"
+                    accessibilityLabel="Connexion"
                 />
 
             </View>

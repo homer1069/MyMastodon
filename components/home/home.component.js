@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import { TabNavigator } from 'react-navigation';
 import { Feeds } from '../feeds/feeds.component';
 
@@ -9,25 +11,35 @@ const FeedTabs = TabNavigator({
 }, {
   tabBarPosition: 'bottom',
   tabBarOptions: {
-    pressColor: '#FF0000',
+    pressColor: '#66b2ff',
     indicatorStyle: {
       height: 2,
       backgroundColor: '#FFF'
     },
     style: {
-      backgroundColor: '#a2273C',
+      backgroundColor: '#3399ff',
       borderTopWidth: 1,
-      borderColor: '#3f101c'
+      borderColor: '#0080ff'
     }
   }
 });
 
-// Main component
+// Main component (which contains feeds and edit option)
 export class Home extends React.Component {
-    static navigationOptions = {
-        title: 'Page d\'accueil',
-        headerLeft: null
+    constructor(props) {
+      super(props);
     }
+
+    // screenProps to get screen element
+    static navigationOptions = ({ navigation, screenProps }) => ({
+        title: 'Mes flux',
+        headerLeft: null,
+        headerRight: (
+          <Icon.Button name="textsms"
+                       backgroundColor="#0080ff"
+                       onPress={ () => { navigation.navigate('tootEdition'); } }/>
+        )
+    });
 
     render() {
         return (
