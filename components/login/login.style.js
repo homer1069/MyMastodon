@@ -7,6 +7,11 @@ export const loginStyle = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white'
     },
+    logo: {
+        width: 150,
+        height: 150,
+        marginBottom: 15
+    },
     inputText: {
         height: 40,
         width: '50%',

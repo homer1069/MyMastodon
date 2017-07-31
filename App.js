@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 
 import { Login } from './components/login/login.component';
 import { Home } from './components/home/home.component';
+import { TootEdition } from './components/toots/toot-edition.component';
 
 // Main component
 class App extends React.Component {
@@ -26,5 +27,8 @@ export default StackNavigator({
      },
      home: {
         screen: Home
+     },
+     tootEdition: {
+       screen: TootEdition
      }
 });

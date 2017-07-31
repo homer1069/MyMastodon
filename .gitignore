@@ -2,3 +2,9 @@ node_modules/
 .expo/
 npm-debug.*
 adb.0.log
+*.ttf
+*.lock
+*.bin
+*.txt
+android/
+ios/

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, Button, ToastAndroid } from 'react-native';
+import { Text, View, TextInput, Button, ToastAndroid, Image } from 'react-native';
 
 import { loginStyle } from './login.style';
 import { globalStyles } from '../common/global.style';
@@ -19,6 +19,7 @@ export class Login extends React.Component {
         header: null
     }
 
+    // Update state form using key (name of the field) and value
     updateForm(key, text) {
         const newState = Object.assign({}, this.state);
         newState[key] = text;
@@ -35,10 +36,15 @@ export class Login extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        console.log('Destruction du composant');
+    }
+
     render() {
+        const appLogo = require('../../assets/images/mastodon_logo.png');
         return (
             <View style={ loginStyle.container }>
-                <Text style={ globalStyles.addMarginBottom }>Bienvenue sur MyMastodon</Text>
+                <Image source={ appLogo } style={ loginStyle.logo }/>
                 <TextInput style={ [ loginStyle.inputText, globalStyles.addMarginBottom ] }
                            underlineColorAndroid="transparent"
                            placeholder="Domaine"
@@ -57,9 +63,10 @@ export class Login extends React.Component {
                            value={ this.state.password }/>
                 <Button
                     onPress={() => this.submitForm() }
+                    style={ { height: 40 } }
                     title="Se connecter"
-                    color="#841584"
-                    accessibilityLabel="Learn more about this purple button"
+                    color="#3399ff"
+                    accessibilityLabel="Connexion"
                 />
 
             </View>
