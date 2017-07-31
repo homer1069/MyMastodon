@@ -4,7 +4,6 @@ npm-debug.*
 adb.0.log
 *.ttf
 *.lock
-*.lock
 *.bin
 *.txt
 android/
