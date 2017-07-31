@@ -5,5 +5,11 @@ export const tootEditionStyle = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: 0,
         textAlignVertical: 'top'
+    },
+    button: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        width: 20
     }
 })

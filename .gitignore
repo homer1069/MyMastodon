@@ -7,3 +7,5 @@ adb.0.log
 *.lock
 *.bin
 *.txt
+android/
+ios/

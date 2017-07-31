@@ -8,8 +8,18 @@ import { Feeds } from '../feeds/feeds.component';
 import { homeStyle } from './home.style';
 
 const FeedTabs = TabNavigator({
-  subscriberFeeds: { screen: Feeds },
-  instanceFeeds: { screen: Feeds }
+  subscriberFeeds: {
+    screen: Feeds,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Abonnements'
+    })
+  },
+  instanceFeeds: {
+    screen: Feeds,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Instance'
+    })
+   }
 }, {
   tabBarPosition: 'top',
   tabBarOptions: {
@@ -27,7 +37,7 @@ const FeedTabs = TabNavigator({
 });
 
 // Main component (which contains feeds and edit option)
-export class Home extends React.Component {
+export class Home extends React.PureComponent {
     constructor(props) {
       super(props);
     }
