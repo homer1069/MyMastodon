@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View, TextInput, Button, ToastAndroid, Image } from 'react-native';
+import axios from 'axios';
+import { Text, View, TextInput, Button, ToastAndroid, Image, Linking, AsyncStorage } from 'react-native';
 
 import { loginStyle } from './login.style';
 import { globalStyles } from '../common/global.style';
@@ -19,6 +20,18 @@ export class Login extends React.Component {
         header: null
     }
 
+    componentDidMount() {
+        Linking.addEventListener('url', this._handleOpenURL);
+    }
+
+    componentWillUnmount() {
+        Linking.removeEventListener('url', this._handleOpenURL);
+    }
+
+    _handleOpenURL(event) {
+        console.log(event.url);
+    }
+
     // Update state form using key (name of the field) and value
     updateForm(key, text) {
         const newState = Object.assign({}, this.state);
@@ -32,7 +45,7 @@ export class Login extends React.Component {
         if (this.state.domain === '' || this.state.username === '' || this.state.password === '' ) {
             ToastAndroid.show('Veuillez remplir le formulaire', ToastAndroid.SHORT);
         } else {
-            this.props.navigation.navigate('home');
+            // Initialize API
         }
     }
 
