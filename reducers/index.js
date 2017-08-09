@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import { initAPIReducer } from './init-api-reducer';
+import { APIReducer } from './api-reducer';
 
 const rootReducer = combineReducers({
-    initAPI: initAPIReducer
+    API: APIReducer
 });
 
 export default rootReducer;
