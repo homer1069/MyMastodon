@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { StatusBar, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-import { Login } from './components/login/login.component';
+import { LoginContainer } from './components/login/login.container';
 import { Home } from './components/home/home.component';
 import { TootEdition } from './components/toots/toot-edition.component';
 
@@ -13,27 +13,13 @@ import { configureStore } from './store/store-configuration';
 // Init redux
 const store = configureStore();
 
-
-// Main component
-class App extends React.Component {
-  render() {
-    return (
-      <Provider store={ store }>
-        <View style={{flex: 1}}>
-          <StatusBar hidden={ true }/>
-        </View>
-      </Provider>
-    );
-  }
-};
-
 // Routing, Navigation
-export default StackNavigator({
+const AppNavigator = StackNavigator({
     initialRouteName: {
-        screen: Login
+        screen: LoginContainer
     },
     login: {
-        screen: Login
+        screen: LoginContainer
      },
      home: {
         screen: Home
@@ -42,3 +28,14 @@ export default StackNavigator({
        screen: TootEdition
      }
 });
+
+// Main component
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store={ store }>
+          <AppNavigator />
+      </Provider>
+    );
+  }
+};

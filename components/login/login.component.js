@@ -83,6 +83,8 @@ export class Login extends React.Component {
         if (url.match(/\?code=(.*)/)) {
             const code = RegExp.$1
             this.mastodonAPI.getToken(code).then(response => {
+                // Add Mastodon API to store
+                this.props.initAPI({ api: this.mastodonAPI })
                 this.props.navigation.navigate('home');
             });
         }
