@@ -1,12 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-import { ActivityIndicator, Text, View, TextInput, Button, ToastAndroid, Image, Linking, AsyncStorage } from 'react-native';
+import { ActivityIndicator, WebView, Text, View, TextInput, Button, ToastAndroid, Image, Linking, AsyncStorage } from 'react-native';
 
 import { loginStyle } from './login.style';
 import { globalStyles } from '../common/global.style';
 
 import MastodonAPI from '../../utils/mastodon-api';
 
+/**
+ * Auth user and init Mastodon API helper
+ */
 export class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -15,34 +18,21 @@ export class Login extends React.Component {
             domain: '',
             isLoading: false,
             clientId: '',
-            clientSecret: ''
+            clientSecret: '',
+            url: ''
         };
-
-        this._handleOpenURL = this._handleOpenURL.bind(this);
     }
 
     static navigationOptions = {
         header: null
     }
 
-    // Get return of the link
-    componentDidMount() {
-        Linking.getInitialURL().then((ev) => {
-            if (ev) {
-                this._handleOpenURL(ev);
-            }
-        }).catch(err => {
-            console.warn('An error occurred', err);
-        });
-        Linking.addEventListener('url', this._handleOpenURL);
-    }
-
-    componentWillUnmount() {
-        Linking.removeEventListener('url', this._handleOpenURL);
-    }
-
-    _handleOpenURL(event) {
-        this.props.navigation.navigate('home');
+    renderLoading() {
+        return (
+            <View style={ loginStyle.container }>
+                <ActivityIndicator size="large"/>
+            </View>
+        );
     }
 
     // Update state form using key (name of the field) and value
@@ -72,34 +62,44 @@ export class Login extends React.Component {
                 // Init Mastodon API object
                 this.mastodonAPI = new MastodonAPI(this.state.domain, clientId, clientSecret);
 
-                // Get authorization
-                this.getAuthorization();
+                this.mastodonAPI.getAuthorizationUrl().then((url) => {
+                    // Set auth url
+                    this.setState({
+                        url: url
+                    });
+                });
 
-                // Hide loading
-                this.setState({ isLoading: false });
             }).catch(error => {
                 console.error(error)
             })
         }
     }
 
-    // Get authorization to get API
-    getAuthorization() {
-        this.mastodonAPI.getAuthorizationUrl().then(url => {
-            Linking.openURL(url);
-        }).catch(error => {
-            console.log(error);
-        });
+    /**
+     * Get code, set new token and get new page
+     * @param {* string} url
+     */
+    getAuthorizationCode(url) {
+        if (url.match(/\?code=(.*)/)) {
+            const code = RegExp.$1
+            this.mastodonAPI.getToken(code).then(response => {
+                this.props.navigation.navigate('home');
+            });
+        }
     }
 
     render() {
         const appLogo = require('../../assets/images/mastodon_logo.png');
+        if (this.state.url !== '') {
+            return (<WebView
+              source={{uri: this.state.url}}
+              renderLoading={ () => { this.renderLoading(); } }
+              style={this.state.webViewStyle}
+              onLoad={(event) => this.getAuthorizationCode(event.nativeEvent.url)}
+            />);
+        }
         if (this.state.isLoading) {
-            return (
-                <View style={ loginStyle.container }>
-                    <ActivityIndicator size="large"/>
-                </View>
-            );
+            this.renderLoading();
         }
         return (
             <View style={ loginStyle.container }>

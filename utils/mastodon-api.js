@@ -1,4 +1,5 @@
 import config from './config';
+import axios from 'axios';
 import querystring from 'querystring';
 
 /**
@@ -19,16 +20,11 @@ export default class MastodonAPI {
         this.clientSecret = clientSecret;
     }
 
+    // Generate auth url
     getAuthorizationUrl() {
-        const redirectUri = 'urn:ietf:wg:oauth:2.0:oob';
+        const redirectUri = 'mastodon://callback';
         return new Promise((resolve) => {
-            const url = this.baseUrl + '/oauth/authorize' + "?" + querystring.stringify({
-            redirect_uri: redirectUri,
-            response_type: 'code',
-            client_id: this.clientId,
-            scope: this.scopes
-            });
-            resolve(`${this.baseUrl}/oauth/authorize?client_id=${this.clientId}&redirect_uri=${ redirectUri }&scope=read+write+follow&response_type=code`);
+            resolve(`${this.baseUrl}/oauth/authorize?client_id=${this.clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=read+write+follow&response_type=code`);
         });
     }
 
@@ -39,10 +35,9 @@ export default class MastodonAPI {
             if (this.token) {
                 resolve(this.token);
             }
-            const code = url.match(/\?code=([a-z0-9]+)/i)[1];
-            axios.post(`https://${domain}/oauth/token`, {
+            axios.post(`${ this.baseUrl }/oauth/token`, {
                 client_id: this.clientId,
-                client_secret: clientSecret,
+                client_secret: this.clientSecret,
                 code,
                 grant_type: 'authorization_code',
                 redirect_uri: 'mastodon://callback'

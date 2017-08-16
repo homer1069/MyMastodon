@@ -1,4 +1,5 @@
 import React from 'react';
+import './ReactotronConfig'
 import { Provider } from 'react-redux';
 import { StatusBar, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
