@@ -1,34 +1,41 @@
 import React from 'react';
+import './ReactotronConfig'
+import { Provider } from 'react-redux';
 import { StatusBar, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-import { Login } from './components/login/login.component';
-import { Home } from './components/home/home.component';
+import { LoginContainer } from './components/login/login.container';
+import { HomeContainer } from './components/home/home.container';
 import { TootEdition } from './components/toots/toot-edition.component';
 
-// Main component
-class App extends React.Component {
-  render() {
-    return (
-      <View style={{flex: 1}}>
-        <StatusBar hidden={ true }/>
-      </View>
-    );
-  }
-};
+import { configureStore } from './store/store-configuration';
+
+// Init redux
+const store = configureStore();
 
 // Routing, Navigation
-export default StackNavigator({
+const AppNavigator = StackNavigator({
     initialRouteName: {
-        screen: Login
+        screen: LoginContainer
     },
     login: {
-        screen: Login
+        screen: LoginContainer
      },
      home: {
-        screen: Home
+        screen: HomeContainer
      },
      tootEdition: {
        screen: TootEdition
      }
 });
+
+// Main component
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store={ store }>
+          <AppNavigator />
+      </Provider>
+    );
+  }
+};

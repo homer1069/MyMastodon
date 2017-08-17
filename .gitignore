@@ -8,3 +8,4 @@ adb.0.log
 *.txt
 android/
 ios/
+.vscode/launch.json

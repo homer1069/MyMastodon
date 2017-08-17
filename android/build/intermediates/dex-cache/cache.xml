@@ -21,30 +21,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/private/var/root/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jar="/Users/Ivan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_e5305602d6c8fb5e05aa32e56f00120ab39f6a7b.jar" />
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_5d5a7b0f099b3ff99dc7287f46ab9da91a1bbb0b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/private/var/root/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jar="/Users/Ivan/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_7aad2f4df60dc69e0c016e9feac2f46f7f9dfef7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/private/var/root/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_e3e1dfcdf1091ad62101747e52cf18170b899a78.jar" />
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_526f6dd3e541038f7592d45ed40db7c629245ca3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -57,21 +48,21 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/Ivan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_d00724fa99ef9cf148e492b1a47d749df49063ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
         <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.0.1_95af9baa0977b2dd1ee12688f72cc9f32390669a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/private/var/root/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
-        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_322b23a0ca8e3c1eb20c0e828a325fde7ff68f8d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -84,12 +75,48 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/Ivan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_7e2d617e002d4f5e695220ebfc330dbf2481bf39.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/Ivan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
         <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_c064c7cb1feca59318b1c9a413244a43d0626625.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Ivan/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_10831e1a7688ff5f3de15bf1b11d4834c2b43de8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Ivan/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0_dee0e9c2bf9be76030e057c7812453b7fdd2f02f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Ivan/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_021a3aaad1396d0def5e9649372e168687268f6b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -129,48 +156,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/private/var/root/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
-        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0_92034e370601d30b55cd98f5af69a6e03941a756.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/private/var/root/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_b64d0aaebd612e64d8c19002cd6f1c00e9fa086c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/private/var/root/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
-        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_feedac7e64b9529289caba241193a90c4fd79a6a.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
         <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.0.1_7ad10b56effb07c0bed1780b0bb54b806d51ee5b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/private/var/root/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="63994437f62bc861bc20c605d12962f7246116d1">
-        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_3a9fa2db5e957d42c7f74ab76a281f86f6e39c72.jar" />
     </item>
     <item
         is-multidex="false"
@@ -189,6 +180,15 @@
         revision="23.0.1"
         sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
         <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_21948d34a375d9eb6b2d7c10b5e36511b08f4e2d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Ivan/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/Ivan/Documents/workspace/Javascript/MyMastodon/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_f0f3ad0beeca9f50dbf55a89e25349698fbc97f9.jar" />
     </item>
     <item
         is-multidex="false"
