@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 import { APIReducer } from './api-reducer';
 
 const rootReducer = combineReducers({
-    API: APIReducer
+    api: APIReducer
 });
 
 export default rootReducer;

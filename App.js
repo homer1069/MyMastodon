@@ -5,7 +5,7 @@ import { StatusBar, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import { LoginContainer } from './components/login/login.container';
-import { Home } from './components/home/home.component';
+import { HomeContainer } from './components/home/home.container';
 import { TootEdition } from './components/toots/toot-edition.component';
 
 import { configureStore } from './store/store-configuration';
@@ -22,7 +22,7 @@ const AppNavigator = StackNavigator({
         screen: LoginContainer
      },
      home: {
-        screen: Home
+        screen: HomeContainer
      },
      tootEdition: {
        screen: TootEdition

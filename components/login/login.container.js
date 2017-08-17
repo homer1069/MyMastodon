@@ -4,7 +4,7 @@ import { Login } from './login.component';
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        initAPI: (newApi) => {
+        api: (newApi) => {
             dispatch({
                 type: Actions.INIT_API,
                 api: newApi

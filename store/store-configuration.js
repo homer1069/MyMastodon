@@ -3,13 +3,9 @@ import rootReducer from '../reducers';
 
 /* eslint-disable */
 // add redux debug dev tools
-const enhancers = compose(
-    window.devToolsExtension ? window.devToolsExtension() : foo => foo
-);
-/* eslint-enable */
-
 export const configureStore = () => {
-    return createStore(rootReducer, {}, enhancers);
+    return createStore(rootReducer, {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 };
+/* eslint-enable */
 
 
