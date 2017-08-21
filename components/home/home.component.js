@@ -3,23 +3,23 @@ import { Text, View, Button, TouchableHighlight } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { TabNavigator } from 'react-navigation';
-import { Feeds } from '../feeds/feeds.component';
+import { HomeFeedsContainer, PublicFeedsContainer } from '../feeds/feeds.container';
 
 import { homeStyle } from './home.style';
 
 const FeedTabs = TabNavigator({
-  subscriberFeeds: {
-    screen: Feeds,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Abonnements'
-    })
-  },
   instanceFeeds: {
-    screen: Feeds,
+    screen: HomeFeedsContainer,
     navigationOptions: ({ navigation }) => ({
       title: 'Instance'
     })
-   }
+  },
+  subscriberFeeds: {
+    screen: PublicFeedsContainer,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Public'
+    })
+  }
 }, {
   tabBarPosition: 'top',
   tabBarOptions: {
