@@ -2,24 +2,25 @@ import React from 'react';
 import { Text, View, Button, TouchableHighlight } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { TabNavigator } from 'react-navigation';
-import { Feeds } from '../feeds/feeds.component';
+import { TabNavigator, DrawerNavigator } from 'react-navigation';
+import { HomeFeedsContainer, PublicFeedsContainer } from '../feeds/feeds.container';
+import { Profile } from '../profile/profile.component';
 
 import { homeStyle } from './home.style';
 
 const FeedTabs = TabNavigator({
-  subscriberFeeds: {
-    screen: Feeds,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Abonnements'
-    })
-  },
   instanceFeeds: {
-    screen: Feeds,
+    screen: HomeFeedsContainer,
     navigationOptions: ({ navigation }) => ({
       title: 'Instance'
     })
-   }
+  },
+  subscriberFeeds: {
+    screen: PublicFeedsContainer,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Public'
+    })
+  }
 }, {
   tabBarPosition: 'top',
   tabBarOptions: {
@@ -36,6 +37,21 @@ const FeedTabs = TabNavigator({
   }
 });
 
+const MenuNavigator = DrawerNavigator({
+  Feed: {
+    screen: FeedTabs,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Liste des flux'
+    })
+  },
+  Profile: {
+    screen: Profile,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profil'
+    })
+  }
+});
+
 // Main component (which contains feeds and edit option)
 export class Home extends React.PureComponent {
     constructor(props) {
@@ -44,14 +60,14 @@ export class Home extends React.PureComponent {
 
     // screenProps to get screen element
     static navigationOptions = ({ navigation, screenProps }) => ({
-        title: 'Mes flux',
+        title: 'Page principale',
         headerLeft: null
     });
 
     render() {
         return (
             <View style={{flex: 1}}>
-                <FeedTabs/>
+                <MenuNavigator/>
                 <TouchableHighlight style={ homeStyle.tootEditButton }
                     underlayColor='#3399ff' onPress={ () => { this.props.navigation.navigate('tootEdition'); } }>
                     <Icon name="textsms" size={30} color="white" />
