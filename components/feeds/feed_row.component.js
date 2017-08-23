@@ -22,7 +22,7 @@ export class FeedRow extends React.Component {
                             { this.props.feed.account.username }
                         </Text>
                         <Text style={ feedRowStyle.creationDate }>
-                            { moment(this.props.feed.created_at).format('DD MMM YYYY') }
+                            { moment(this.props.feed.created_at).format('DD MMM YYYY HH:mm:ss') }
                         </Text>
                     </View>
                     <HTMLView

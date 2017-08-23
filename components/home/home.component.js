@@ -47,7 +47,7 @@ const MenuNavigator = DrawerNavigator({
   Profile: {
     screen: Profile,
     navigationOptions: ({ navigation }) => ({
-      title: 'Profil'
+      title: 'Mon profil'
     })
   }
 });
