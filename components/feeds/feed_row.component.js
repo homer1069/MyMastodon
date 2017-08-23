@@ -10,7 +10,6 @@ export class FeedRow extends React.Component {
         super(props);
     }
     render() {
-        console.log(this.props.feed);
         return (
             <View style={ feedRowStyle.container }>
                 <Image
