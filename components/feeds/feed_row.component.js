@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HTMLView from 'react-native-htmlview';
@@ -17,6 +18,14 @@ export class FeedRow extends React.Component {
                     source={{uri: this.props.feed.account.avatar}}
                 />
                 <View style={ feedRowStyle.contentView }>
+                    <View style={ feedRowStyle.contentHeaderView }>
+                        <Text style={ feedRowStyle.contentHeaderViewUsername }>
+                            { this.props.feed.account.username }
+                        </Text>
+                        <Text style={ feedRowStyle.creationDate }>
+                            { moment(this.props.feed.created_at).format('DD MMM YYYY') }
+                        </Text>
+                    </View>
                     <HTMLView
                         value={ this.props.feed.content }
                     />

@@ -17,6 +17,16 @@ export const feedRowStyle = StyleSheet.create({
         flex: 1,
         flexDirection: 'column'
     },
+    contentHeaderView: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+    contentHeaderViewUsername: {
+        fontWeight: 'bold'
+    },
+    creationDate: {
+        marginLeft: 5
+    },
     icons: {
         flex: 1,
         flexDirection: 'row',

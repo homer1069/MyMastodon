@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, ActivityIndicator, ListView } from 'react-native';
+import { Text, View, Button, ActivityIndicator, ListView, RefreshControl } from 'react-native';
 import { FeedRow } from './feed_row.component';
 
 import { fetchUtils } from '../../utils/fetch-utils';
@@ -12,8 +12,20 @@ export class PublicFeeds extends React.Component {
         super(props);
 
         this.state = {
+            refreshing: false,
             feeds: []
         };
+    }
+
+    // Manage feeds refresh
+    _onRefresh() {
+        this.setState({refreshing: true});
+        fetchUtils.get(this.props.api.token, this.props.api.baseUrl + '/api/v1/timelines/public').then(response => {
+            this.setState({
+                refreshing: false,
+                feeds: response.data
+            });
+        });
     }
 
     componentDidMount() {
@@ -31,6 +43,12 @@ export class PublicFeeds extends React.Component {
             return (
                 <View>
                     <ListView
+                        refreshControl={
+                            <RefreshControl
+                                refreshing={this.state.refreshing}
+                                onRefresh={this._onRefresh.bind(this)}
+                            />
+                        }
                         dataSource={ ds.cloneWithRows(this.state.feeds) }
                         renderRow={ (row, j, k) => <FeedRow feed={ row } index={ parseInt(k, 10) }/> }
                     />
