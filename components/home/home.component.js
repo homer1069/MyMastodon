@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { TabNavigator, DrawerNavigator } from 'react-navigation';
 import { HomeFeedsContainer, PublicFeedsContainer } from '../feeds/feeds.container';
-import { Profile } from '../profile/profile.component';
+import { ProfileContainer } from '../profile/profile.container';
 
 import { homeStyle } from './home.style';
 
@@ -45,7 +45,7 @@ const MenuNavigator = DrawerNavigator({
     })
   },
   Profile: {
-    screen: Profile,
+    screen: ProfileContainer,
     navigationOptions: ({ navigation }) => ({
       title: 'Mon profil'
     })
